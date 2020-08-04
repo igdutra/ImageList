@@ -6,14 +6,14 @@
 //  Copyright © 2020 Ivo Dutra. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 /// Services Layer for ImageInfo
 class ImageServices {
 
     var baseURL = URL(string: "https://jsonplaceholder.typicode.com/photos")!
 
-    // MARK: - Fetch
+    // MARK: - Fetch Info
 
     func fetchImageInfo(completion: @escaping ([ImageInfo]?) -> Void) {
 
@@ -44,6 +44,22 @@ class ImageServices {
         }
 
         task.resume()
+    }
+
+    // MARK: - Fetch Image
+
+     /// Fetches one image
+    func fetchSingleImage(at url: URL, _ completion: @escaping (UIImage) -> Void) {
+
+        // Request the image
+        let imageTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
+            guard let data = data, let image = UIImage(data: data) else { return }
+
+            // The image should be saved at the correct position from the images array
+            completion(image)
+        }
+
+        imageTask.resume()
     }
 
 }

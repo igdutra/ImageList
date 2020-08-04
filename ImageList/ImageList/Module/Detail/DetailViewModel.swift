@@ -19,6 +19,7 @@ class DetailViewModel {
 
     weak var delegate: DetailViewModelDelegate?
     var info: ImageInfo
+    var service: ImageServices
     var greaterImage: UIImage? {
         didSet {
             delegate?.loadImage()
@@ -30,31 +31,13 @@ class DetailViewModel {
     init(info: ImageInfo, delegate: DetailViewModelDelegate) {
         self.info = info
         self.delegate = delegate
+        self.service = ImageServices()
 
         let url = URL(string: info.url)!
 
         // Grab image
-        fetchSingleImage(at: url) { (image) in
+        service.fetchSingleImage(at: url) { (image) in
             self.greaterImage = image
         }
     }
-
-    // MARK: - fetch Image
-
-    // Obs: this function is beeing written twice. Could be better.
-
-     /// Fetches the greaterImage
-    func fetchSingleImage(at url: URL, _ completion: @escaping (UIImage) -> Void) {
-
-        // Request the image
-        let imageTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
-            guard let data = data, let image = UIImage(data: data) else { return }
-
-            // The image should be saved at the correct position from the images array
-            completion(image)
-        }
-
-        imageTask.resume()
-    }
-
 }

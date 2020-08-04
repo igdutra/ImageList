@@ -19,8 +19,9 @@ class ListViewModel {
 
     weak var navigationDelegate: ListViewController?
     weak var delegate: ListViewModelDelegate?
+    /// Used to certify that array when dequeuing will not be out of index
     var infosDidSet: Bool
-    // When imageInfos is set, reload tableview
+    // When imageInfos is set, get the images
     var imageInfos: [ImageInfo] {
         didSet {
             // After imageInfos was set, request the images
@@ -28,7 +29,7 @@ class ListViewModel {
             self.infosDidSet = true
         }
     }
-    // Dictionary to assure that correct image is to its correct id
+    /// Dictionary to assure that correct image is to its correct id
     var images: [Int: UIImage] {
         didSet {
             delegate?.reloadTableView()
@@ -44,7 +45,7 @@ class ListViewModel {
         imageInfos = []
         images = [:]
         infosDidSet = false
-        // Should make as dependency but to be fast, it was done this way
+        // Should make as dependency but for this test it was made this way
         services = ImageServices()
 
         // Fetch all infos
@@ -70,7 +71,7 @@ class ListViewModel {
     // MARK: - Get Images
 
     /// If no image was requested, range is 0...20
-    /// If some images where alread loaded, then grab always a +20 interval
+    /// If some images where alread loaded, then grab the images always inside a +20 interval
     /// Completion: set scroll flag back to false
     func getMoreImages(_ completion: @escaping () -> Void = { } )  {
 
@@ -83,7 +84,7 @@ class ListViewModel {
             // Id from info
             let id = imageInfos[id].id
 
-            fetchSingleImage(at: url) { (image) in
+            services.fetchSingleImage(at: url) { (image) in
                 self.images[id] = image
 
                 // If last photo was requested, set scroll flag back to false
@@ -92,20 +93,6 @@ class ListViewModel {
                 }
             }
         }
-    }
-
-     /// Fetches one image
-    func fetchSingleImage(at url: URL, _ completion: @escaping (UIImage) -> Void) {
-
-        // Request the image
-        let imageTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
-            guard let data = data, let image = UIImage(data: data) else { return }
-
-            // The image should be saved at the correct position from the images array
-            completion(image)
-        }
-
-        imageTask.resume()
     }
 
     // MARK: - Navigation

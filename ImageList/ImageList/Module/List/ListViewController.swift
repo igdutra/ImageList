@@ -19,9 +19,9 @@ class ListViewController: UIViewController {
     var viewModel: ListViewModel?
 
     private var myView: ListView {
-            // swiftlint:disable force_cast
-            return view as! ListView
-            // swiftlint:enable force_cast
+        // swiftlint:disable force_cast
+        return view as! ListView
+        // swiftlint:enable force_cast
     }
 
     // MARK: - Life Cycle

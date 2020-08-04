@@ -63,8 +63,6 @@ extension ImageTableViewCell: ViewCodable {
 
     func render() { }
 
-    func updateView() { }
-
     // MARK: - View Codable Helpers
 
     func configureCentralImage() {
