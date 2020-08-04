@@ -46,6 +46,8 @@ extension ListView: UITableViewDelegate, UITableViewDataSource {
         guard let viewModel = viewModel else { return UITableViewCell() }
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: imageTableViewCellId) as? ImageTableViewCell {
+            
+
             // Update CentralImageView or use the placeholder before request is finished
 //            cell.centralImageView.image = viewModel.images[indexPath.row] ?? UIImage.Default.photoPlaceholder!
             cell.centralImageView.image = UIImage.Default.photoPlaceholder!
@@ -65,15 +67,15 @@ extension ListView: UITableViewDelegate, UITableViewDataSource {
 
     // MARK: - Delegate
 
-//extension ListView: PhotoViewModelDelegate {
-//
-//    /// Reload Table View on the main Thread
-//    func reloadTableView() {
-//        DispatchQueue.main.async {
-//            self.tableView.reloadData()
-//        }
-//    }
-//}
+extension ListView: ListViewModelDelegate {
+
+    /// Reload Table View on the main Thread
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+}
 
     // MARK: - View Codable
 

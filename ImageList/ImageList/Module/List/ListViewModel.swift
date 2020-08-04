@@ -8,16 +8,22 @@
 
 import Foundation
 
+/// ViewModel's Delegate is the View
+protocol ListViewModelDelegate: class {
+    func reloadTableView()
+}
+
 class ListViewModel {
 
     // MARK: - Properties
 
+    weak var delegate: ListViewModelDelegate?
     var imageInfos: [ImageInfo]
     var services: ImageServices
 
     // MARK: - Init
 
-    init() {
+    init(delegate: ListViewModelDelegate) {
         imageInfos = []
         // Should make as dependency but to be fast, it was done this way
         services = ImageServices()

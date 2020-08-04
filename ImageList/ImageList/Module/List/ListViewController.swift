@@ -33,7 +33,7 @@ class ListViewController: UIViewController {
         self.title = "List"
 
         // When viewModel is initialized, the request is made.
-        let listViewModel = ListViewModel()
+        let listViewModel = ListViewModel(delegate: myView)
 
         viewModel = listViewModel
         myView.viewModel = viewModel
