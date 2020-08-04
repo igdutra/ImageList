@@ -32,6 +32,7 @@ class ListViewController: UIViewController {
 
         self.title = "List"
 
+        // When viewModel is initialized, the request is made.
         let listViewModel = ListViewModel()
 
         viewModel = listViewModel
