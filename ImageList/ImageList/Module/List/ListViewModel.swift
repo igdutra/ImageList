@@ -23,7 +23,7 @@ class ListViewModel {
     var imageInfos: [ImageInfo] {
         didSet {
             // After imageInfos was set, request the images
-            getImages()
+            getMoreImages()
             self.infosDidSet = true
         }
     }
@@ -67,10 +67,15 @@ class ListViewModel {
 
     // MARK: - Get Images
 
-    func getImages() {
+    /// If no image was requested, range is 0...20
+    /// If some images where alread loaded, then grab always a +20 interval
+    /// Completion: set scroll flag back to false
+    func getMoreImages(_ completion: @escaping () -> Void = { } )  {
 
-        // Fetch fist 20 images
-        for id in 0...20 {
+        let range = (images.count)...(images.count + 20)
+
+        // Fetch images containing in range
+        for id in range {
             let url = URL(string: imageInfos[id].thumbnailUrl!)!
 
             // Id from info
@@ -78,8 +83,12 @@ class ListViewModel {
 
             fetchSingleImage(at: url) { (image) in
                 self.images[id] = image
-            }
 
+                // If last photo was requested, set scroll flag back to false
+                if id == range.max() {
+                    completion()
+                }
+            }
         }
     }
 

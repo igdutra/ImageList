@@ -130,8 +130,9 @@ extension ListView {
     func fetchMoreImages() {
         // Prevent calling several times
         fetchingMore = true
-
-        
+        viewModel?.getMoreImages({
+            self.fetchingMore = false
+        })
     }
 }
 
