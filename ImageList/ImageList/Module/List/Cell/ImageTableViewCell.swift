@@ -57,7 +57,8 @@ extension ImageTableViewCell: ViewCodable {
             // Pin View to the center horizontally and at the top.
             // Bottom constraint already set at centralImage
             view.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
-            view.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+            view.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8).isActive = true
+            view.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8).isActive = true
         }
     }
 
@@ -76,5 +77,6 @@ extension ImageTableViewCell: ViewCodable {
 
     func configureLabel() {
         titleLabel.text = ""
+        titleLabel.numberOfLines = 0
     }
 }

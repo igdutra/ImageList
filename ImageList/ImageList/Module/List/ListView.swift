@@ -52,10 +52,13 @@ extension ListView: UITableViewDelegate, UITableViewDataSource {
 //            cell.centralImageView.image = viewModel.images[indexPath.row] ?? UIImage.Default.photoPlaceholder!
             cell.centralImageView.image = UIImage.Default.photoPlaceholder!
 
-            // Add title according to the day
-//            let day = viewModel.days[indexPath.row]
-//            cell.titleLabel.text = viewModel.photoInfos[day]?.title ?? "Title unknown"
-             cell.titleLabel.text = "Title unknown"
+
+            // Certify that array when dequeuing will not be out of index
+            if viewModel.infosDidSet {
+                cell.titleLabel.text = viewModel.imageInfos[indexPath.row].title
+            } else {
+                cell.titleLabel.text = "Title unknown"
+            }
 
             return cell
         }

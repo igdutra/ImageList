@@ -18,13 +18,21 @@ class ListViewModel {
     // MARK: - Properties
 
     weak var delegate: ListViewModelDelegate?
-    var imageInfos: [ImageInfo]
+    var infosDidSet: Bool
+    // When imageInfos is set, reload tableview
+    var imageInfos: [ImageInfo] {
+        didSet {
+            delegate?.reloadTableView()
+            self.infosDidSet = true
+        }
+    }
     var services: ImageServices
 
     // MARK: - Init
 
     init(delegate: ListViewModelDelegate) {
         imageInfos = []
+        infosDidSet = false
         // Should make as dependency but to be fast, it was done this way
         services = ImageServices()
 
@@ -40,7 +48,7 @@ class ListViewModel {
 
             if let imageInfos = infos {
                 self.imageInfos = imageInfos
-                print(imageInfos)
+                
             } else {
                 print("could not get infos")
             }
