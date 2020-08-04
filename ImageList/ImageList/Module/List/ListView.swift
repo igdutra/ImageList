@@ -46,12 +46,9 @@ extension ListView: UITableViewDelegate, UITableViewDataSource {
         guard let viewModel = viewModel else { return UITableViewCell() }
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: imageTableViewCellId) as? ImageTableViewCell {
-            
 
             // Update CentralImageView or use the placeholder before request is finished
-//            cell.centralImageView.image = viewModel.images[indexPath.row] ?? UIImage.Default.photoPlaceholder!
-            cell.centralImageView.image = UIImage.Default.photoPlaceholder!
-
+            cell.centralImageView.image = viewModel.images[indexPath.row] ?? UIImage.Default.photoPlaceholder!
 
             // Certify that array when dequeuing will not be out of index
             if viewModel.infosDidSet {
