@@ -13,7 +13,6 @@ class ImageTableViewCell: UITableViewCell {
     // MARK: - Properties
     var centralImageView: UIImageView
     var titleLabel: UILabel
-    var viewModel: ImageTableViewCellViewModel?
 
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

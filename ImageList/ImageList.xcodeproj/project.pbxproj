@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C56A975C24D9EEDD005F3BAE /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A975B24D9EEDD005F3BAE /* ImageTableViewCell.swift */; };
-		C56A975E24D9EF06005F3BAE /* ImageTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A975D24D9EF06005F3BAE /* ImageTableViewCellViewModel.swift */; };
 		C56A976124D9EF75005F3BAE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A976024D9EF75005F3BAE /* UIView+Extension.swift */; };
 		C56A976324D9EFD5005F3BAE /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A976224D9EFD5005F3BAE /* UIImage+Extension.swift */; };
+		C56A976624DA0E72005F3BAE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A976524DA0E72005F3BAE /* DetailViewController.swift */; };
+		C56A976824DA0E79005F3BAE /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A976724DA0E79005F3BAE /* DetailViewModel.swift */; };
+		C56A976A24DA0E97005F3BAE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A976924DA0E97005F3BAE /* DetailView.swift */; };
 		C5B6655824D9E4EC00ADE9D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6655724D9E4EC00ADE9D7 /* AppDelegate.swift */; };
 		C5B6655C24D9E4EC00ADE9D7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6655B24D9E4EC00ADE9D7 /* ListViewController.swift */; };
 		C5B6656124D9E4EF00ADE9D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5B6656024D9E4EF00ADE9D7 /* Assets.xcassets */; };
@@ -24,9 +26,11 @@
 
 /* Begin PBXFileReference section */
 		C56A975B24D9EEDD005F3BAE /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
-		C56A975D24D9EF06005F3BAE /* ImageTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		C56A976024D9EF75005F3BAE /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		C56A976224D9EFD5005F3BAE /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		C56A976524DA0E72005F3BAE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C56A976724DA0E79005F3BAE /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		C56A976924DA0E97005F3BAE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		C5B6655424D9E4EC00ADE9D7 /* ImageList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B6655724D9E4EC00ADE9D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5B6655B24D9E4EC00ADE9D7 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				C56A975B24D9EEDD005F3BAE /* ImageTableViewCell.swift */,
-				C56A975D24D9EF06005F3BAE /* ImageTableViewCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -67,6 +70,16 @@
 				C56A976224D9EFD5005F3BAE /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C56A976424DA0E5F005F3BAE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				C56A976524DA0E72005F3BAE /* DetailViewController.swift */,
+				C56A976724DA0E79005F3BAE /* DetailViewModel.swift */,
+				C56A976924DA0E97005F3BAE /* DetailView.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		C5B6654B24D9E4EC00ADE9D7 = {
@@ -119,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				C5D7EDF424D9EBDE0015F071 /* List */,
+				C56A976424DA0E5F005F3BAE /* Detail */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -217,11 +231,13 @@
 				C5B6657024D9E72200ADE9D7 /* ImageInfo.swift in Sources */,
 				C56A975C24D9EEDD005F3BAE /* ImageTableViewCell.swift in Sources */,
 				C5B6657224D9E88700ADE9D7 /* ViewCodable.swift in Sources */,
+				C56A976624DA0E72005F3BAE /* DetailViewController.swift in Sources */,
 				C5B6655C24D9E4EC00ADE9D7 /* ListViewController.swift in Sources */,
-				C56A975E24D9EF06005F3BAE /* ImageTableViewCellViewModel.swift in Sources */,
 				C5D7EDF624D9EC8A0015F071 /* ListView.swift in Sources */,
 				C5B6657424D9E8C400ADE9D7 /* ImageServices.swift in Sources */,
+				C56A976A24DA0E97005F3BAE /* DetailView.swift in Sources */,
 				C5D7EDF324D9EBC70015F071 /* ListViewModel.swift in Sources */,
+				C56A976824DA0E79005F3BAE /* DetailViewModel.swift in Sources */,
 				C56A976124D9EF75005F3BAE /* UIView+Extension.swift in Sources */,
 				C56A976324D9EFD5005F3BAE /* UIImage+Extension.swift in Sources */,
 				C5B6655824D9E4EC00ADE9D7 /* AppDelegate.swift in Sources */,

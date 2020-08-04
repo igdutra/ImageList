@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ListNavigationDelegate: class {
+    func goToDetail(fromImage: ImageInfo)
+}
+
 class ListViewController: UIViewController {
 
     // MARK: - Properties
@@ -33,11 +37,21 @@ class ListViewController: UIViewController {
         self.title = "List"
 
         // When viewModel is initialized, the request is made.
-        let listViewModel = ListViewModel(delegate: myView)
+        let listViewModel = ListViewModel(delegate: myView,
+                                          navigation: self)
 
         viewModel = listViewModel
         myView.viewModel = viewModel
     }
 }
 
+    // MARK: - Navigation
 
+extension ListViewController: ListNavigationDelegate {
+
+    func goToDetail(fromImage image: ImageInfo) {
+        let detailController = DetailViewController(info: image)
+        self.navigationController?.pushViewController(detailController, animated: true)
+    }
+
+}

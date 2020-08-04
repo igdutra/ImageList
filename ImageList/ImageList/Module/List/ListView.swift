@@ -66,6 +66,16 @@ extension ListView: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
 
+    // MARK: - Navigation
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = viewModel else { return }
+
+        let info = viewModel.imageInfos[indexPath.row]
+
+        viewModel.navigationDelegate?.goToDetail(fromImage: info)
+    }
+
 }
 
     // MARK: - Delegate

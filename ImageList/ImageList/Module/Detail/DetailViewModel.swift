@@ -1,5 +1,5 @@
 //
-//  ImageTableViewCellViewModel.swift
+//  DetailViewModel.swift
 //  ImageList
 //
 //  Created by Ivo Dutra on 04/08/20.
@@ -8,11 +8,16 @@
 
 import Foundation
 
-class ImageTableViewCellViewModel {
+class DetailViewModel {
 
     // MARK: - Properties
 
+    var info: ImageInfo
+
     // MARK: - Init
 
-}
+    init(info: ImageInfo) {
+        self.info = info
+    }
 
+}

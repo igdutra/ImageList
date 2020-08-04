@@ -17,6 +17,7 @@ class ListViewModel {
 
     // MARK: - Properties
 
+    weak var navigationDelegate: ListViewController?
     weak var delegate: ListViewModelDelegate?
     var infosDidSet: Bool
     // When imageInfos is set, reload tableview
@@ -37,8 +38,9 @@ class ListViewModel {
 
     // MARK: - Init
 
-    init(delegate: ListViewModelDelegate) {
+    init(delegate: ListViewModelDelegate, navigation: ListViewController) {
         self.delegate = delegate
+        self.navigationDelegate = navigation
         imageInfos = []
         images = [:]
         infosDidSet = false
@@ -104,6 +106,12 @@ class ListViewModel {
         }
 
         imageTask.resume()
+    }
+
+    // MARK: - Navigation
+
+    func goToDetail(fromImage info: ImageInfo) {
+        navigationDelegate?.goToDetail(fromImage: info)
     }
 
 }
