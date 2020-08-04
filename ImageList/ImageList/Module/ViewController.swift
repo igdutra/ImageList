@@ -10,13 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var imageInfos: [ImageInfo] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("oi")
+        
         self.view.backgroundColor = .red
+
+
+        let imageService = ImageServices()
+
+        imageService.fetchImageInfo { (infos) in
+
+            if let info = infos {
+                print(info)
+            } else {
+                print("nao rolou")
+
+
+            }
+        }
+
     }
 
-
 }
+
+
 
