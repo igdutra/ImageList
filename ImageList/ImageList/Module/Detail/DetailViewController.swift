@@ -42,7 +42,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let detailViewModel = DetailViewModel(info: self.imageInfo)
+        let detailViewModel = DetailViewModel(info: self.imageInfo,
+                                              delegate: myView)
 
         viewModel = detailViewModel
         myView.viewModel = viewModel

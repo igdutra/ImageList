@@ -41,9 +41,12 @@ extension DetailView: ViewCodable {
 
     func configure() {
         guard let viewModel = viewModel else { return }
-        
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage.Default.photoPlaceholder
+
+        // UI code on main thread
+        DispatchQueue.main.async {
+            self.imageView.contentMode = .scaleAspectFit
+            self.imageView.image = viewModel.greaterImage ?? UIImage.Default.photoPlaceholder
+        }
     }
 
     func setupHierarchy() {
@@ -60,5 +63,12 @@ extension DetailView: ViewCodable {
     }
 
     func render() { }
+}
+
+extension DetailView: DetailViewModelDelegate {
+
+    func loadImage() {
+        configure()
+    }
 
 }

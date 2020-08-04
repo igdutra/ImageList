@@ -51,7 +51,7 @@ extension ListViewController: ListNavigationDelegate {
 
     func goToDetail(fromImage image: ImageInfo) {
         let detailController = DetailViewController(info: image)
-        self.navigationController?.pushViewController(detailController, animated: true)
+        self.navigationController?.pushViewController(detailController, animated: false)
     }
 
 }
