@@ -14,7 +14,7 @@ class ListView: UIView {
 
     var tableView: UITableView
     var imageTableViewCellId: String
-
+    var fetchingMore: Bool
     var viewModel: ListViewModel?
 
     // MARK: - Init
@@ -22,6 +22,7 @@ class ListView: UIView {
     override init(frame: CGRect) {
         tableView = UITableView()
         imageTableViewCellId = "photoCell"
+        fetchingMore = false
 
         super.init(frame: frame)
 
@@ -38,8 +39,10 @@ class ListView: UIView {
 extension ListView: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        guard let viewModel = viewModel else { return 0 }
-        return 5
+        guard let viewModel = viewModel else { return 0 }
+        let count: Int = (viewModel.images.count > 0) ? viewModel.images.count : 5
+
+        return count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -105,5 +108,30 @@ extension ListView: ViewCodable {
 
     // MARK: - View Codable Helpers
 
+}
+
+    // MARK: - Infinite scroll
+
+extension ListView {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        // Calculated automatically, considered all images
+        let contentHeight = scrollView.contentSize.height
+
+        // If the scroll action was greater than the content - device size
+        if offsetY > contentHeight - scrollView.frame.height {
+            if !fetchingMore {
+                fetchMoreImages()
+            }
+        }
+    }
+
+    func fetchMoreImages() {
+        // Prevent calling several times
+        fetchingMore = true
+
+        
+    }
 }
 
