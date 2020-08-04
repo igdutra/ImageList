@@ -7,25 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C56A975C24D9EEDD005F3BAE /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A975B24D9EEDD005F3BAE /* ImageTableViewCell.swift */; };
+		C56A975E24D9EF06005F3BAE /* ImageTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A975D24D9EF06005F3BAE /* ImageTableViewCellViewModel.swift */; };
+		C56A976124D9EF75005F3BAE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A976024D9EF75005F3BAE /* UIView+Extension.swift */; };
+		C56A976324D9EFD5005F3BAE /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56A976224D9EFD5005F3BAE /* UIImage+Extension.swift */; };
 		C5B6655824D9E4EC00ADE9D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6655724D9E4EC00ADE9D7 /* AppDelegate.swift */; };
-		C5B6655C24D9E4EC00ADE9D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6655B24D9E4EC00ADE9D7 /* ViewController.swift */; };
+		C5B6655C24D9E4EC00ADE9D7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6655B24D9E4EC00ADE9D7 /* ListViewController.swift */; };
 		C5B6656124D9E4EF00ADE9D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5B6656024D9E4EF00ADE9D7 /* Assets.xcassets */; };
 		C5B6656424D9E4EF00ADE9D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B6656224D9E4EF00ADE9D7 /* LaunchScreen.storyboard */; };
 		C5B6657024D9E72200ADE9D7 /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6656F24D9E72200ADE9D7 /* ImageInfo.swift */; };
 		C5B6657224D9E88700ADE9D7 /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6657124D9E88700ADE9D7 /* ViewCodable.swift */; };
 		C5B6657424D9E8C400ADE9D7 /* ImageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6657324D9E8C400ADE9D7 /* ImageServices.swift */; };
+		C5D7EDF324D9EBC70015F071 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D7EDF224D9EBC70015F071 /* ListViewModel.swift */; };
+		C5D7EDF624D9EC8A0015F071 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D7EDF524D9EC8A0015F071 /* ListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C56A975B24D9EEDD005F3BAE /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		C56A975D24D9EF06005F3BAE /* ImageTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		C56A976024D9EF75005F3BAE /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		C56A976224D9EFD5005F3BAE /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		C5B6655424D9E4EC00ADE9D7 /* ImageList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B6655724D9E4EC00ADE9D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C5B6655B24D9E4EC00ADE9D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C5B6655B24D9E4EC00ADE9D7 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		C5B6656024D9E4EF00ADE9D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5B6656324D9E4EF00ADE9D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5B6656524D9E4EF00ADE9D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5B6656F24D9E72200ADE9D7 /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
 		C5B6657124D9E88700ADE9D7 /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
 		C5B6657324D9E8C400ADE9D7 /* ImageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageServices.swift; sourceTree = "<group>"; };
+		C5D7EDF224D9EBC70015F071 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		C5D7EDF524D9EC8A0015F071 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +51,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C56A975A24D9EDFA005F3BAE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C56A975B24D9EEDD005F3BAE /* ImageTableViewCell.swift */,
+				C56A975D24D9EF06005F3BAE /* ImageTableViewCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C56A975F24D9EF60005F3BAE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C56A976024D9EF75005F3BAE /* UIView+Extension.swift */,
+				C56A976224D9EFD5005F3BAE /* UIImage+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C5B6654B24D9E4EC00ADE9D7 = {
 			isa = PBXGroup;
 			children = (
@@ -88,7 +118,7 @@
 		C5B6656D24D9E65E00ADE9D7 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				C5B6655B24D9E4EC00ADE9D7 /* ViewController.swift */,
+				C5D7EDF424D9EBDE0015F071 /* List */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -96,10 +126,22 @@
 		C5B6656E24D9E70B00ADE9D7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C56A975F24D9EF60005F3BAE /* Extensions */,
 				C5B6656F24D9E72200ADE9D7 /* ImageInfo.swift */,
 				C5B6657124D9E88700ADE9D7 /* ViewCodable.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C5D7EDF424D9EBDE0015F071 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				C56A975A24D9EDFA005F3BAE /* Cell */,
+				C5B6655B24D9E4EC00ADE9D7 /* ListViewController.swift */,
+				C5D7EDF224D9EBC70015F071 /* ListViewModel.swift */,
+				C5D7EDF524D9EC8A0015F071 /* ListView.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,9 +215,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5B6657024D9E72200ADE9D7 /* ImageInfo.swift in Sources */,
+				C56A975C24D9EEDD005F3BAE /* ImageTableViewCell.swift in Sources */,
 				C5B6657224D9E88700ADE9D7 /* ViewCodable.swift in Sources */,
-				C5B6655C24D9E4EC00ADE9D7 /* ViewController.swift in Sources */,
+				C5B6655C24D9E4EC00ADE9D7 /* ListViewController.swift in Sources */,
+				C56A975E24D9EF06005F3BAE /* ImageTableViewCellViewModel.swift in Sources */,
+				C5D7EDF624D9EC8A0015F071 /* ListView.swift in Sources */,
 				C5B6657424D9E8C400ADE9D7 /* ImageServices.swift in Sources */,
+				C5D7EDF324D9EBC70015F071 /* ListViewModel.swift in Sources */,
+				C56A976124D9EF75005F3BAE /* UIView+Extension.swift in Sources */,
+				C56A976324D9EFD5005F3BAE /* UIImage+Extension.swift in Sources */,
 				C5B6655824D9E4EC00ADE9D7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
