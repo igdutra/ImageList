@@ -70,5 +70,4 @@ extension DetailView: DetailViewModelDelegate {
     func loadImage() {
         configure()
     }
-
 }
